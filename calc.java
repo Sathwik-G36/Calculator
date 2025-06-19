@@ -17,7 +17,6 @@ public class Calc extends JFrame {
         setLocationRelativeTo(null);
         setLayout(null);
 
-        // Animated panel for background
         animatedPanel = new JPanel(null) {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
@@ -27,7 +26,6 @@ public class Calc extends JFrame {
         animatedPanel.setBounds(0, 0, 420, 650);
         add(animatedPanel);
 
-        // Animate the hue
         Timer bgTimer = new Timer(40, e -> {
             hue += 0.002;
             if (hue > 1f) hue = 0f;
@@ -35,7 +33,6 @@ public class Calc extends JFrame {
         });
         bgTimer.start();
 
-        // Display
         display = new JTextField();
         display.setBounds(30, 30, 340, 60);
         display.setFont(new Font("Segoe UI", Font.BOLD, 28));
@@ -45,7 +42,6 @@ public class Calc extends JFrame {
         display.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
         animatedPanel.add(display);
 
-        // Buttons
         String[] btnLabels = {
             "7", "8", "9", "/",
             "4", "5", "6", "*",
